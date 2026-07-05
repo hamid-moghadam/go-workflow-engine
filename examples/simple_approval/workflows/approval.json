@@ -1,0 +1,45 @@
+{
+  "workflow_type": "approval",
+  "name": "Simple Approval Workflow",
+  "initial_step": "submit",
+  "initial_state": "Pending",
+  "steps": [
+    {
+      "name": "submit",
+      "title": "Submit Request",
+      "order": 1,
+      "static_data": {"description": "Submit your request for approval"},
+      "actions": [
+        {
+          "name": "SUBMIT",
+          "next_step": "review",
+          "validation": "validateSubmit",
+          "new_state": "Submitted"
+        }
+      ]
+    },
+    {
+      "name": "review",
+      "title": "Manager Review",
+      "order": 2,
+      "actions": [
+        {
+          "name": "APPROVE",
+          "next_step": "done",
+          "new_state": "Approved"
+        },
+        {
+          "name": "REJECT",
+          "next_step": "submit",
+          "new_state": "Rejected"
+        }
+      ]
+    },
+    {
+      "name": "done",
+      "title": "Completed",
+      "order": 3,
+      "actions": []
+    }
+  ]
+}

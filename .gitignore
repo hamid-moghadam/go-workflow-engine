@@ -1,0 +1,21 @@
+# IDE
+.cursor/
+.idea/
+.vscode/
+
+# Build
+bin/
+*.exe
+*.test
+*.out
+
+# Coverage
+coverage.out
+coverage.html
+
+# Environment
+.env
+.env.local
+
+# Compose
+.mimocode/
